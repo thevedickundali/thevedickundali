@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astro Guide</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(120deg, #1a1a2e, #16213e);
+        color: #fff;
+        text-align: center;
+    }
+
+    header {
+        padding: 30px;
+        background: #0f3460;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .card {
+        background: #533483;
+        margin: 15px auto;
+        padding: 15px;
+        border-radius: 10px;
+        max-width: 400px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .card h3 {
+        color: #ffd369;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        background: #ffd369;
+        color: #000;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    footer {
+        margin-top: 20px;
+        padding: 15px;
+        background: #0f3460;
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>🔮 Astro Guide</h1>
+    <p>Daily Horoscope & Astrology</p>
+</header>
+
+<div class="container">
+
+    <h2>🌟 Today's Horoscope</h2>
+
+    <div class="card" id="horoscopeBox">
+        <h3>Click Button</h3>
+        <p>Get your horoscope prediction</p>
+    </div>
+
+    <button onclick="showHoroscope()">Check Horoscope</button>
+
+</div>
+
+<footer>
+    <p>© 2026 Astro Guide | Demo Website</p>
+</footer>
+
+<script>
+function showHoroscope() {
+    const data = [
+        { sign: "Aries", text: "Today is a lucky day. Take bold decisions." },
+        { sign: "Taurus", text: "Focus on money matters. Avoid risks." },
+        { sign: "Gemini", text: "Communication will bring success." },
+        { sign: "Cancer", text: "Family time will give peace." },
+        { sign: "Leo", text: "Leadership opportunities coming." }
+    ];
+
+    const random = data[Math.floor(Math.random() * data.length)];
+
+    document.getElementById("horoscopeBox").innerHTML =
+        "<h3>" + random.sign + "</h3><p>" + random.text + "</p>";
+}
+</script>
+
+</body>
+</html>
